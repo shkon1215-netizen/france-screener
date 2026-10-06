@@ -179,6 +179,15 @@ GitHub Pages, with a retry after a pause for Yahoo throttling. The page is
 unlisted (`noindex` plus a blanket `robots.txt`), but the repo is public,
 which free Pages requires. No screen output is committed.
 
+Live: https://shkon1215-netizen.github.io/france-screener/.
+
+**Euronext and Yahoo both answer GitHub's runners**, confirmed on the first
+run, 2026-10-06: roster 630, 574 priced, 181 factsheets fetched with no
+failures, no retry needed. The funnel matched the local run line for line
+(181 / 112 / 24, with 17 / 7 / 6). If the roster or factsheet step ever fails
+in CI while working locally, suspect Euronext blocking the runner range
+before a code change.
+
 A docs-only push does not trigger a run (`paths-ignore: **.md`); start one with
 `gh workflow run screen.yml`.
 
