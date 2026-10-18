@@ -9,7 +9,7 @@ terms or cheap against their own filed history. Each row also carries three
 years of revenue, EBITDA and net profit.
 
 **Defaults:** market cap ≥ USD 600M · median daily traded value ≥ USD 1M on
-Euronext Paris · ≥20% below peer median on ≥2 of 3 metrics · ROE ≥ 5%.
+Euronext Paris · ≥20% below peer median on ≥2 of 4 metrics (P/E, P/B, EV/EBITDA, P/FCF) · ROE ≥ 5%.
 
 This is the sixth market, after [Korea](https://github.com/shkon1215-netizen/korea-screener),
 the UK, Japan, [Germany](https://github.com/shkon1215-netizen/germany-screener)
@@ -17,6 +17,12 @@ and [Poland](https://github.com/shkon1215-netizen/poland-screener). It is built
 by combining what each earlier market had to learn. `screener.py` is the same
 maths throughout. The data layer, the share-class hygiene and the
 holding-company handling are specific to France.
+
+
+**Also:** the outright screen's 2% payout floor counts buybacks (shareholder
+yield = dividends + buybacks − issuance), and trailing profit far above
+operating profit — a tax credit, an investment gain — is capped at
+operating profit after tax before scoring (tagged `one-off`).
 
 ## Setup
 
